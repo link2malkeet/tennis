@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for match.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> match.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>48/74</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">53.85% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>35/65</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.38% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>47/73</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const ADVANTAGE = "Advantage";
+const DEUCE = "Deuce";
+const ADDITIONAL_GAME = "wins with Additional game";
+export default class Match {
+    player1Score: number = 0;
+    player2Score: number = 0;
+    player1GameScore: number = 0;
+    player2GameScore: number = 0;
+    tieBreaker: boolean = false;
+    tieBreakerScorePlayer1 = 0;
+    tieBreakerScorePlayer2 = 0;
+&nbsp;
+    constructor(private player1: string, private player2: string) { }
+&nbsp;
+    pointWonBy(player: string): void {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.tieBreaker) {
+            if (player === this.player1) {
+                this.player1Score++;
+            } else {
+                this.player2Score++;
+            }
+            // console.log(this.player1Score, "::", this.player2Score);
+        } else {
+<span class="cstat-no" title="statement not covered" >            if (player === this.player1) {</span>
+<span class="cstat-no" title="statement not covered" >                this.tieBreakerScorePlayer1++;</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                this.tieBreakerScorePlayer2++;</span>
+            }
+        }
+&nbsp;
+&nbsp;
+    }
+&nbsp;
+    score(): string {
+        // if (this.tieBreakerCheck()) {
+        //     return this.setScore() + ", " + this.playerWithHighestScoreOnTieBreaker() + " " + "with Tie breaker";
+        // }
+        // if (this.isTieBreakerRequired()) {
+        //     this.tieBreaker = true;
+        //     return "Tie Breaker";
+        // }
+        // if (this.additionalGameRequired()) {
+        //     return this.setScore() + ", " + this.playerWithHighestScore() + " " + ADDITIONAL_GAME;
+        // }
+        if (this.gameWinner()) {
+            return this.setScore();
+        }
+        if (this.onAdvantage()) {
+            return this.setScore() + ", " + ADVANTAGE + " " + this.playerWithHighestScore();
+        }
+        if (this.onDeuce()) {
+            return this.setScore() + ", " + DEUCE;
+        }
+&nbsp;
+        return this.setScore() + ", " + this.gameScore(this.player1Score) + "-" + this.gameScore(this.player2Score);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    tieBreakerCheck</span>() {
+<span class="cstat-no" title="statement not covered" >        if (this.tieBreakerScorePlayer1 &gt;= 7 &amp;&amp; this.tieBreakerScorePlayer1 - this.tieBreakerScorePlayer2 &gt;= 2) {</span>
+<span class="cstat-no" title="statement not covered" >            this.updateGameScore(this.player1);</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (this.tieBreakerScorePlayer2 &gt;= 7 &amp;&amp; this.tieBreakerScorePlayer2 - this.tieBreakerScorePlayer1 &gt;= 2) {</span>
+<span class="cstat-no" title="statement not covered" >            this.updateGameScore(this.player2);</span>
+<span class="cstat-no" title="statement not covered" >            return true</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    isTieBreakerRequired</span>() {
+<span class="cstat-no" title="statement not covered" >        if (this.player1Score &gt;= 6 &amp;&amp; this.player1Score - this.player2Score == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.player2Score &gt;= 6 &amp;&amp; this.player2Score - this.player1Score == 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    additionalGameRequired</span>() {
+<span class="cstat-no" title="statement not covered" >        if (this.player1Score &gt;= 6 &amp;&amp; this.player1Score == this.player2Score + 2) {</span>
+<span class="cstat-no" title="statement not covered" >            this.updateGameScore(this.player1);</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (this.player2Score &gt;= 6 &amp;&amp; this.player2Score == this.player1Score + 2) {</span>
+<span class="cstat-no" title="statement not covered" >            this.updateGameScore(this.player2);</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    onDeuce(): boolean {
+        return (this.player1Score &gt;= 3 &amp;&amp; this.player1Score &gt;= 3) &amp;&amp; this.player2Score == this.player1Score;
+    }
+&nbsp;
+    onAdvantage() {
+        if (this.player1Score &gt;= 3 &amp;&amp; this.player1Score == this.player2Score + 1)
+            return true;
+        if (this.player2Score &gt;= 3 &amp;&amp; this.player2Score == this.player1Score + 1)
+            return true;
+        return false;
+    }
+&nbsp;
+    playerWithHighestScore(): string {
+        if (this.player1Score &gt; this.player2Score) {
+            return this.player1;
+        } else {
+            return this.player2;
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    playerWithHighestScoreOnTieBreaker</span>(): string {
+<span class="cstat-no" title="statement not covered" >        if (this.tieBreakerScorePlayer1 &gt; this.tieBreakerScorePlayer2) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.player1;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return this.player2;</span>
+        }
+    }
+&nbsp;
+&nbsp;
+    gameWinner() {
+        if (this.player1Score &gt;= 4 &amp;&amp; this.player1Score &gt;= this.player2Score + 2) {
+            this.updateGameScore(this.player1);
+            return true;
+        }
+        if (this.player2Score &gt;= 4 &amp;&amp; this.player2Score &gt;= this.player1Score + 2) {
+            this.updateGameScore(this.player2);
+            return true;
+        }
+        return false;
+    }
+&nbsp;
+    updateGameScore(player: string) {
+        if (player === this.player1) {
+            this.player1GameScore++;
+        } else {
+            this.player2GameScore++;
+        }
+    }
+&nbsp;
+    gameScore(score: number): string {
+        switch (score) {
+            case 0:
+                return "0";
+            case 1:
+                return "15";
+<span class="branch-2 cbranch-no" title="branch not covered" >            case 2:</span>
+<span class="cstat-no" title="statement not covered" >                return "30";</span>
+            case 3:
+                return "40";
+        }
+    }
+&nbsp;
+    setScore() {
+        return this.player1GameScore + "-" + this.player2GameScore;
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 17 2019 01:48:27 GMT+1100 (Australian Eastern Daylight Time)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>
