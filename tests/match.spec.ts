@@ -10,6 +10,15 @@ describe("Tennis Scoring System", () => {
         match = null;
     })
 
+    function createScore(n: number, m: number ) {
+        for (let i = 0; i < n; i++) {
+            match.updateGameScore("player 1");
+        }
+        for (let i = 0; i < m; i++) {
+            match.updateGameScore("player 2");
+        }
+    }
+
     describe("start the match", () => {
         it("with love all", () => {
             expect(match.score()).toBe("0-0, 0-0");
@@ -17,24 +26,24 @@ describe("Tennis Scoring System", () => {
     });
 
     describe('player1', () => {
-        it("wins first ball game", () => {
+        it("wins first ball shot", () => {
             match.pointWonBy("player 1");
             expect(match.score()).toBe("0-0, 15-0");
         });
-        it("wins 3 consecutive ball games", () => {
+        it("wins 3 consecutive ball shots", () => {
             match.pointWonBy("player 1");
             match.pointWonBy("player 1");
             match.pointWonBy("player 1");
             expect(match.score()).toBe("0-0, 40-0");
         });
-        it("wins first set", () => {
+        it("wins first game", () => {
             match.pointWonBy("player 1");
             match.pointWonBy("player 1");
             match.pointWonBy("player 1");
             match.pointWonBy("player 1");
             expect(match.score()).toBe("1-0");
         });
-        it("wins set on advantage", () => {
+        it("wins game on advantage", () => {
             match.pointWonBy("player 1");
             match.pointWonBy("player 2");
             expect(match.score()).toBe('0-0, 15-15');
@@ -53,86 +62,38 @@ describe("Tennis Scoring System", () => {
             match.pointWonBy("player 1");
             expect(match.score()).toBe('1-0');
         });
-        it.skip("wins after additonal game", () => {
-            match.pointWonBy("player 1");//1
-            match.pointWonBy("player 2");//1
-            expect(match.score()).toBe('0-0, 15-15');
-
-            match.pointWonBy("player 1");//2
-            match.pointWonBy("player 1");//3
-            expect(match.score()).toBe('0-0, 40-15');
-
-            match.pointWonBy("player 2");//2
-            match.pointWonBy("player 2");//3
-            expect(match.score()).toBe('0-0, Deuce');
-
-            match.pointWonBy("player 1");//4
-            expect(match.score()).toBe('0-0, Advantage player 1');
-
-            match.pointWonBy("player 1");//5
-            match.pointWonBy("player 2");//4
-            match.pointWonBy("player 2");//5
-            match.pointWonBy("player 1");//6
-            match.pointWonBy("player 1");//7
-            expect(match.score()).toBe('1-0, player 1 wins with Additional game');
+ 
+        it("wins set", () => {
+            createScore(6,5);
+            expect(match.score()).toBe('7-5, player 1 wins set');
         });
-        it.skip("wins after tie-breaker game", () => {
-            match.pointWonBy("player 1");//1
-            match.pointWonBy("player 2");//1
-            expect(match.score()).toBe('0-0, 15-15');
-
-            match.pointWonBy("player 1");//2
-            match.pointWonBy("player 1");//3
-            expect(match.score()).toBe('0-0, 40-15');
-
-            match.pointWonBy("player 2");//2
-            match.pointWonBy("player 2");//3
-            expect(match.score()).toBe('0-0, Deuce');
-
-            match.pointWonBy("player 1");//4
-            expect(match.score()).toBe('0-0, Advantage player 1');
-
-            match.pointWonBy("player 1");//5
-            match.pointWonBy("player 2");//4
-            match.pointWonBy("player 2");//5
-            match.pointWonBy("player 1");//6
-            match.pointWonBy("player 2");//6
-
-            console.log(match.score());
-
-            match.pointWonBy("player 1");
-            match.pointWonBy("player 1");
-            match.pointWonBy("player 1");
-            match.pointWonBy("player 1");
-            match.pointWonBy("player 1");
-            match.pointWonBy("player 1");
-            match.pointWonBy("player 1");
-            console.log(match.score());
-            
-
-            expect(match.score()).toBe('1-0, player 1 wins with Additional game');
-        })
+        // it.only("tie breaker", () => {
+        //     createScore(6,5);
+        //     createScore(0,1);
+        //     // match.pointWonBy("player 2");
+        //     expect(match.score()).toBe('6-6, Tie Breaker');
+        // });
     });
 
     describe('player2', () => {
-        it("wins first ball game", () => {
+        it("wins first ball shot", () => {
             match.pointWonBy("player 2");
             expect(match.score()).toBe("0-0, 0-15");
         });
-        it("wins 3 consecutive ball games", () => {
+        it("wins 3 consecutive ball shots", () => {
             match.pointWonBy("player 2");
             match.pointWonBy("player 2");
             match.pointWonBy("player 2");
             expect(match.score()).toBe("0-0, 0-40");
         });
-        it("wins first set", () => {
+        it("wins first game", () => {
             match.pointWonBy("player 2");
             match.pointWonBy("player 2");
             match.pointWonBy("player 2");
             match.pointWonBy("player 2");
             expect(match.score()).toBe("0-1");
         });
-        it("wins set on advantage", () => {
+        it("wins game on advantage", () => {
             match.pointWonBy("player 2");
             match.pointWonBy("player 1");
             expect(match.score()).toBe('0-0, 15-15');
@@ -151,30 +112,12 @@ describe("Tennis Scoring System", () => {
             match.pointWonBy("player 2");
             expect(match.score()).toBe('0-1');
         });
-        it.skip("wins after additonal game", () => {
-            match.pointWonBy("player 2");
-            match.pointWonBy("player 1");
-            expect(match.score()).toBe('0-0, 15-15');
-
-            match.pointWonBy("player 2");
-            match.pointWonBy("player 2");
-            expect(match.score()).toBe('0-0, 15-40');
-
-            match.pointWonBy("player 1");
-            match.pointWonBy("player 1");
-            expect(match.score()).toBe('0-0, Deuce');
-
-            match.pointWonBy("player 2");
-            expect(match.score()).toBe('0-0, Advantage player 2');
-
-            match.pointWonBy("player 2");//5
-            match.pointWonBy("player 1");//4
-            match.pointWonBy("player 1");//5
-            match.pointWonBy("player 2");//6
-            match.pointWonBy("player 2");//7
-            expect(match.score()).toBe('0-1, player 2 wins with Additional game');
-        })
+        it("wins set", () => {
+            createScore(5,6);
+            expect(match.score()).toBe('5-7, player 2 wins set');
+        });
     });
 
 
 });
+
