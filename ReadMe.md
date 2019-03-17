@@ -8,7 +8,7 @@ How to use
 Install npm dependencies
 Use your command-line:
 
-A) From package.json (recommended for existing projects):
+A) From package.json
 npm install
 B) Run the test case
 npm test
